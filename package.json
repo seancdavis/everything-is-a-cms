@@ -10,6 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "faunadb": "^3.0.1",
     "glob": "^7.1.6",
     "google-spreadsheet": "^3.0.13",
     "gray-matter": "^4.0.2",

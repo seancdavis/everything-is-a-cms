@@ -15,6 +15,7 @@ export default function Page({ pages }) {
       </Head>
 
       <div>
+        <a href="/">Home</a>
         <h1>{pageTitle}</h1>
         {pages.map((page, idx) => (
           <div key={idx}>

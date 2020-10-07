@@ -62,8 +62,6 @@ export async function getStaticProps() {
     })
   })
 
-  console.log(files, items)
-
   return {
     props: {
       items: items

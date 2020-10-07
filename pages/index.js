@@ -15,6 +15,9 @@ export default function HomePage() {
         <li>
           <a href="/dropbox">Dropbox</a>
         </li>
+        <li>
+          <a href="/trello">Trello</a>
+        </li>
       </ul>
     </>
   )

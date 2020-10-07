@@ -6,6 +6,9 @@ export default function HomePage() {
         <li>
           <a href="/local">Local Markdown Pages</a>
         </li>
+        <li>
+          <a href="/sheets">Google Sheets</a>
+        </li>
       </ul>
     </>
   )

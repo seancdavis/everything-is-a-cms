@@ -4,8 +4,7 @@ import Head from "next/head"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
-import remark from "remark"
-import html from "remark-html"
+import MarkdownIt from "markdown-it"
 
 export default function Page({ page }) {
   const router = useRouter()
@@ -21,21 +20,20 @@ export default function Page({ page }) {
       </Head>
 
       <div>
+        <a href="/local">&lt; Back</a>
         <h1>{page.title}</h1>
+        <img src={page.image} alt="" />
         <div dangerouslySetInnerHTML={{ __html: page.content }} />
       </div>
     </>
   )
 }
 
-async function markdownToHtml(markdown) {
-  const result = await remark().use(html).process(markdown)
-  return result.toString()
-}
+const md = new MarkdownIt()
 
-const pagesDirectory = path.join(process.cwd(), "_pages")
+const pagesDirectory = path.join(process.cwd(), "_local")
 
-const getPage = slug => {
+const getPage = (slug) => {
   const fullPath = path.join(pagesDirectory, `${slug}.md`)
   const fileContents = fs.readFileSync(fullPath, "utf8")
   return matter(fileContents)
@@ -43,7 +41,7 @@ const getPage = slug => {
 
 export async function getStaticProps({ params }) {
   const page = getPage(params.slug)
-  const content = await markdownToHtml(page.content || "")
+  const content = md.render(page.content || "")
 
   return {
     props: {
@@ -57,7 +55,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   return {
-    paths: fs.readdirSync(pagesDirectory).map(filename => {
+    paths: fs.readdirSync(pagesDirectory).map((filename) => {
       return {
         params: {
           slug: path.basename(filename, path.extname(filename))

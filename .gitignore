@@ -34,4 +34,4 @@ yarn-error.log*
 .vercel
 
 # markdown files
-_pages/
+_local/

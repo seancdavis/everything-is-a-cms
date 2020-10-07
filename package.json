@@ -10,6 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "dropbox": "^6.0.2",
     "faunadb": "^3.0.1",
     "glob": "^7.1.6",
     "google-spreadsheet": "^3.0.13",

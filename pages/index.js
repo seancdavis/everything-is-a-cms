@@ -10,7 +10,10 @@ export default function HomePage() {
           <a href="/sheets">Google Sheets</a>
         </li>
         <li>
-          <a href="/external-db">External Database</a>
+          <a href="/fauna">FaunaDB</a>
+        </li>
+        <li>
+          <a href="/dropbox">Dropbox</a>
         </li>
       </ul>
     </>

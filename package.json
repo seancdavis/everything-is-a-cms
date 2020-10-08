@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
+    "import:bear": "node lib/api/bear.js",
     "start": "next start"
   },
   "dependencies": {
@@ -20,6 +21,9 @@
     "next": "9.5.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "sequelize": "5",
+    "slugify": "^1.4.5",
+    "sqlite3": "4",
     "trello": "^0.10.0"
   }
 }

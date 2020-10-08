@@ -18,6 +18,9 @@ export default function HomePage() {
         <li>
           <a href="/trello">Trello</a>
         </li>
+        <li>
+          <a href="/bear">Bear</a>
+        </li>
       </ul>
     </>
   )

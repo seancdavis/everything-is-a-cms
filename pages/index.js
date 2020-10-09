@@ -7,10 +7,13 @@ export default function HomePage() {
           <a href="/local">Local Markdown Pages</a>
         </li>
         <li>
-          <a href="/sheets">Google Sheets</a>
+          <a href="/contentful">Contentful</a>
         </li>
         <li>
           <a href="/fauna">FaunaDB</a>
+        </li>
+        <li>
+          <a href="/sheets">Google Sheets</a>
         </li>
         <li>
           <a href="/dropbox">Dropbox</a>

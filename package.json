@@ -20,11 +20,13 @@
     "lodash": "^4.17.20",
     "markdown-it": "^11.0.1",
     "next": "^9.5.5",
+    "postcss-preset-env": "^6.7.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sequelize": "5",
     "slugify": "^1.4.5",
     "sqlite3": "4",
+    "tailwindcss": "^1.8.13",
     "trello": "^0.10.0"
   }
 }

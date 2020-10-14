@@ -4,7 +4,7 @@ export default function HomePage() {
       <h1>Everything is a CMS!</h1>
       <ul>
         <li>
-          <a href="/local">Local Markdown Pages</a>
+          <a href="/local-files">Local Markdown Pages</a>
         </li>
         <li>
           <a href="/contentful">Contentful</a>

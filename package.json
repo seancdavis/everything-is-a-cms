@@ -11,6 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@svgr/webpack": "^5.4.0",
     "contentful": "^7.14.7",
     "dropbox": "^6.0.2",
     "faunadb": "^3.0.1",

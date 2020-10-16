@@ -4,26 +4,38 @@ import Head from "next/head"
 
 import Card from "../components/card"
 
-const PageTemplate = ({ items, title }) => {
+const PageTemplate = ({ items, logo, title }) => {
   return (
     <>
       <Head>
         <title>{title} | Everything is a CMS!</title>
       </Head>
 
-      <div>
-        <a href="/">Home</a>
-        <h1>{title}</h1>
-        {items.map((item, idx) => (
-          <Card key={idx} {...item} />
-        ))}
-      </div>
+      <main className="bg-gray-200 min-h-screen pb-16">
+        <div className="py-8 text-center">
+          <div className="w-32 inline-block">{logo && logo()}</div>
+          <h1 className="text-3xl italic font-bold text-gray-500">{title}</h1>
+        </div>
+        <a
+          href="/"
+          className="fixed text-gray-600 text-sm uppercase font-bold underline"
+          style={{ left: ".5rem", top: ".5rem" }}
+        >
+          Home
+        </a>
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 sm:px-0">
+          {items.map((item, idx) => (
+            <Card key={idx} {...item} />
+          ))}
+        </div>
+      </main>
     </>
   )
 }
 
 PageTemplate.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
+  logo: PropTypes.func,
   title: PropTypes.string.isRequired
 }
 

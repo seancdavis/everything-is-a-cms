@@ -1,30 +1,12 @@
-import Head from "next/head"
 import MarkdownIt from "markdown-it"
 import Trello from "trello"
 import find from "lodash/find"
 
-const pageTitle = "Trello"
+import PageTemplate from "../../templates/page"
 
-export default function Page({ items }) {
-  return (
-    <>
-      <Head>
-        <title>{pageTitle}</title>
-      </Head>
-
-      <div>
-        <a href="/">Home</a>
-        <h1>{pageTitle}</h1>
-        {items.map((item, idx) => (
-          <div key={idx}>
-            <h2>{item.title}</h2>
-            <img src={item.image} alt="" />
-            <div dangerouslySetInnerHTML={{ __html: item.content }} />
-          </div>
-        ))}
-      </div>
-    </>
-  )
+const TrelloSandwiches = ({ items }) => {
+  const pageTitle = "Trello"
+  return <PageTemplate title={pageTitle} items={items} />
 }
 
 const md = new MarkdownIt()
@@ -73,3 +55,5 @@ export async function getStaticProps() {
     }
   }
 }
+
+export default TrelloSandwiches

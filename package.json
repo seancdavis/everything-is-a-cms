@@ -8,6 +8,7 @@
     "build": "next build",
     "export": "next export",
     "import:bear": "node lib/api/bear.js",
+    "import:trello": "node lib/import/trello.js",
     "start": "next start"
   },
   "dependencies": {
@@ -18,6 +19,7 @@
     "glob": "^7.1.6",
     "google-spreadsheet": "^3.0.13",
     "gray-matter": "^4.0.2",
+    "js-yaml": "^3.14.0",
     "lodash": "^4.17.20",
     "markdown-it": "^11.0.1",
     "next": "^9.5.5",

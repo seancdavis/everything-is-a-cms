@@ -12,8 +12,8 @@ const PageTemplate = ({ items, logo, title }) => {
       </Head>
 
       <main className="bg-gray-200 min-h-screen pb-16">
-        <div className="py-8 text-center">
-          {logo && <img src={`/logos/${logo}.svg`} alt={logo} className="w-32 inline-block mb-2" />}
+        <div className="py-12 text-center">
+          {logo && <img src={`/logos/${logo}.svg`} alt={logo} className="h-16 inline-block mb-4" />}
           <h1 className="text-3xl italic font-bold text-gray-500">{title}</h1>
         </div>
         <a

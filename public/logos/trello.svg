@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>trello-logo-blue</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="trello-logo-blue" fill="#CBD5E0" fill-rule="nonzero">
+            <g id="Mark" transform="translate(0.000000, -0.000000)">
+                <path d="M25,0 L175,0 C188.807119,-2.53632657e-15 200,11.1928813 200,25 L200,175 C200,188.807119 188.807119,200 175,200 L25,200 C11.1928813,200 1.69088438e-15,188.807119 0,175 L0,25 C-1.69088438e-15,11.1928813 11.1928813,2.53632657e-15 25,0 Z M125,26 C118.372583,26 113,31.372583 113,38 L113,101.5 C113,108.127417 118.372583,113.5 125,113.5 L162,113.5 C168.627417,113.5 174,108.127417 174,101.5 L174,38 C174,31.372583 168.627417,26 162,26 L125,26 Z M38,26 C31.372583,26 26,31.372583 26,38 L26,151.5 C26,158.127417 31.372583,163.5 38,163.5 L75,163.5 C81.627417,163.5 87,158.127417 87,151.5 L87,38 C87,31.372583 81.627417,26 75,26 L38,26 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

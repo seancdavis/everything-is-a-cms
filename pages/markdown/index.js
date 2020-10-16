@@ -1,10 +1,3 @@
-import compact from "lodash/compact"
-import fs from "fs"
-import glob from "glob"
-import MarkdownIt from "markdown-it"
-import matter from "gray-matter"
-import path from "path"
-
 import parseMarkdownFiles from "../../lib/parse-markdown-files"
 
 import PageTemplate from "../../templates/page"

@@ -13,7 +13,7 @@ const PageTemplate = ({ items, logo, title }) => {
 
       <main className="bg-gray-200 min-h-screen pb-16">
         <div className="py-8 text-center">
-          <div className="w-32 inline-block">{logo && logo()}</div>
+          {logo && <img src={`/logos/${logo}.svg`} alt={logo} className="w-32 inline-block mb-2" />}
           <h1 className="text-3xl italic font-bold text-gray-500">{title}</h1>
         </div>
         <a
@@ -35,7 +35,7 @@ const PageTemplate = ({ items, logo, title }) => {
 
 PageTemplate.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
-  logo: PropTypes.func,
+  logo: PropTypes.string,
   title: PropTypes.string.isRequired
 }
 

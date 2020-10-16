@@ -7,11 +7,8 @@ import path from "path"
 
 import PageTemplate from "../../templates/page"
 
-import logo from "../../lib/logos/markdown.svg"
-
 const MarkdownSandiwches = ({ items }) => {
-  const pageTitle = "Markdown Sandwiches"
-  return <PageTemplate title={pageTitle} items={items} logo={logo} />
+  return <PageTemplate title="Markdown Sandwiches" items={items} logo="markdown" />
 }
 
 export async function getStaticProps() {

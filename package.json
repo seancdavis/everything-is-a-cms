@@ -12,12 +12,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.2.4",
     "@svgr/webpack": "^5.4.0",
     "contentful": "^7.14.7",
     "dropbox": "^6.0.2",
     "faunadb": "^3.0.1",
     "glob": "^7.1.6",
     "google-spreadsheet": "^3.0.13",
+    "graphql": "^15.3.0",
     "gray-matter": "^4.0.2",
     "js-yaml": "^3.14.0",
     "lodash": "^4.17.20",

@@ -1,15 +1,16 @@
 const { ApolloServer, gql } = require("apollo-server")
 
-const trello = require("./drivers/trello")
+const trello = require("./lib/drivers/trello")
 
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
 // your data.
 const typeDefs = gql`
   type Sandwich {
-    title: String
-    image: String
     body: String
+    excerpt: String
+    image: String
+    title: String
   }
 
   type Query {

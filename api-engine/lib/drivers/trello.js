@@ -1,6 +1,8 @@
 const Trello = require("trello")
 const find = require("lodash/find")
 
+const extractExcerpt = require("../extract-excerpt")
+
 const trello = new Trello(process.env.TRELLO_API_KEY, process.env.TRELLO_ACCESS_TOKEN)
 
 module.exports = async function getCards() {
@@ -25,7 +27,12 @@ module.exports = async function getCards() {
   await trello
     .getCardsOnListWithExtraParams(list.id)
     .then((res) => {
-      items = res.map((item) => ({ id: item.id, title: item.name, body: item.desc }))
+      items = res.map((item) => ({
+        id: item.id,
+        title: item.name,
+        body: item.desc,
+        excerpt: extractExcerpt(item.desc)
+      }))
     })
     .catch((err) => console.error("--- ERROR ---", err))
 

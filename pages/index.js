@@ -1,13 +1,15 @@
-import Card from "../components/card"
-
 const pages = [
   {
-    slug: "markdown",
-    title: "Local Markdown Files"
+    slug: "bear",
+    title: "Bear"
   },
   {
     slug: "contentful",
     title: "Contentful"
+  },
+  {
+    slug: "dropbox",
+    title: "Dropbox"
   },
   {
     slug: "fauna",
@@ -18,16 +20,12 @@ const pages = [
     title: "Google Sheets"
   },
   {
-    slug: "dropbox",
-    title: "Dropbox"
+    slug: "markdown",
+    title: "Markdown Files"
   },
   {
     slug: "trello",
     title: "Trello"
-  },
-  {
-    slug: "bear",
-    title: "Bear"
   }
 ]
 
@@ -37,7 +35,7 @@ export default function HomePage() {
       <div className="py-12 text-center">
         <h1 className="text-3xl italic font-bold text-gray-500">Everything is a CMS!</h1>
       </div>
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 sm:px-0">
+      <div className="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 px-4 sm:px-0">
         {pages.map(({ title, slug }, idx) => (
           <a
             key={idx}

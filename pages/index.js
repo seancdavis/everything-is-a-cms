@@ -1,30 +1,54 @@
+import Card from "../components/card"
+
+const pages = [
+  {
+    slug: "markdown",
+    title: "Local Markdown Files"
+  },
+  {
+    slug: "contentful",
+    title: "Contentful"
+  },
+  {
+    slug: "fauna",
+    title: "FaunaDB"
+  },
+  {
+    slug: "sheets",
+    title: "Google Sheets"
+  },
+  {
+    slug: "dropbox",
+    title: "Dropbox"
+  },
+  {
+    slug: "trello",
+    title: "Trello"
+  },
+  {
+    slug: "bear",
+    title: "Bear"
+  }
+]
+
 export default function HomePage() {
   return (
-    <>
-      <h1>Everything is a CMS!</h1>
-      <ul>
-        <li>
-          <a href="/markdown">Local Markdown Pages</a>
-        </li>
-        <li>
-          <a href="/contentful">Contentful</a>
-        </li>
-        <li>
-          <a href="/fauna">FaunaDB</a>
-        </li>
-        <li>
-          <a href="/sheets">Google Sheets</a>
-        </li>
-        <li>
-          <a href="/dropbox">Dropbox</a>
-        </li>
-        <li>
-          <a href="/trello">Trello</a>
-        </li>
-        <li>
-          <a href="/bear">Bear</a>
-        </li>
-      </ul>
-    </>
+    <main className="bg-gray-200 min-h-screen pb-16">
+      <div className="py-12 text-center">
+        <h1 className="text-3xl italic font-bold text-gray-500">Everything is a CMS!</h1>
+      </div>
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 sm:px-0">
+        {pages.map(({ title, slug }, idx) => (
+          <a
+            key={idx}
+            href={`/${slug}`}
+            className="text-gray-600 hover:opacity-50 transition-all duration-300"
+          >
+            <img src={`/logos/${slug}.svg`} alt="" className="h-24 object-contain w-full mb-4" />
+            <h2 className="font-bold text-lg text-center mb-2">{title}</h2>
+          </a>
+        ))}
+      </div>
+    </main>
   )
 }

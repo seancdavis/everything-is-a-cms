@@ -2,7 +2,7 @@ import parseMarkdownFiles from "../../lib/parse-markdown-files"
 
 import PageTemplate from "../../templates/page"
 
-const MarkdownSandiwches = ({ items }) => {
+const MarkdownSandwiches = ({ items }) => {
   return <PageTemplate title="Markdown Sandwiches" items={items} logo="markdown" />
 }
 
@@ -16,4 +16,4 @@ export async function getStaticProps() {
   }
 }
 
-export default MarkdownSandiwches
+export default MarkdownSandwiches

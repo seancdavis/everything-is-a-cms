@@ -1,7 +1,7 @@
 ---
 title: Reuben
 image: >-
-  https://trello-attachments.s3.amazonaws.com/5f7e07fd650b32351084a230/5f8824c8ad7fe9163ae9788a/5d95e560b9ebbf54562a5d65a16a285e/b6373cf742f54c92be10f28b386be6b1.jpg
+  https://trello-attachments.s3.amazonaws.com/5f7e07fd650b32351084a230/5f900a95cfaa658c7162e3e7/5655862f9d2dbc652aa37688db7c1842/reuben.jpg
 ---
 
 Reuben is a melty sandwich consisting of a combination of corned beef, rye bread, sauerkraut, Russian dressing, and Swiss cheese. According to one out of many theories, it was invented in 1914 at Manhattan's Reuben Delicatessen by its owner, Arnold Reuben, when an out-of-work actress ordered something new, and Arnold made her a Reuben sandwich.

@@ -1,7 +1,7 @@
 ---
 title: BLT
 image: >-
-  https://trello-attachments.s3.amazonaws.com/5f7e07fd650b32351084a230/5f8824bc28d93957b09ae3f3/3a3387754765a295fb94975c8d1b60b4/3f4736feb0a54cf59cba5ef99aef5a17.jpg
+  https://trello-attachments.s3.amazonaws.com/5f7e07fd650b32351084a230/5f900a93efcae450ac04286e/92651b1658cd4c80affc41270ea403a3/blt.jpg
 ---
 
 Crispy, crunchy and salty bacon, fresh, slightly acidic tomatoes, chilled lettuce, mayonnaise, and toast - there is little, if no excuses for error while making a BLT sandwich. However, there are strict rules regarding the ingredients, according to food critic Mimi Sheraton: the bacon has to be hot, freshly fried and extremely crispy, the tomatoes must be ripe and sliced thinly, the lettuce must have bite and flavor, so iceberg lettuce is forbidden, and the bread should be toasted until golden-brown.

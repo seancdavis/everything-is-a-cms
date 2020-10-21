@@ -1,3 +1,4 @@
+import compact from "lodash/compact"
 import MarkdownIt from "markdown-it"
 import * as contentful from "contentful"
 
@@ -19,12 +20,19 @@ const client = contentful.createClient({
 export async function getStaticProps() {
   let items = []
 
-  await client.getEntries({ content_type: contentTypeId }).then((res) => {
-    items = res.items.map((item) => ({
-      title: item.fields.title,
-      content: md.render(item.fields.body),
-      image: item.fields.image.fields.file.url
-    }))
+  await client.getEntries({ content_type: contentTypeId, order: "fields.title" }).then((res) => {
+    items = res.items.map((item) => {
+      let excerpt = compact(item.fields.body.split("\n"))[0]
+      if (excerpt.length > 100) {
+        excerpt = `${excerpt.split(/\.|\!\?/)[0]}.`
+      }
+
+      return {
+        title: item.fields.title,
+        excerpt: md.render(excerpt),
+        image: item.fields.image.fields.file.url
+      }
+    })
   })
 
   return {

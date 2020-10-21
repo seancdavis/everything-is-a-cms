@@ -1,30 +1,12 @@
-import Head from "next/head"
 import MarkdownIt from "markdown-it"
 import * as contentful from "contentful"
 
-const pageTitle = "Contentful"
+import PageTemplate from "../../templates/page"
+
 const contentTypeId = "sandwich"
 
 export default function Page({ items }) {
-  return (
-    <>
-      <Head>
-        <title>{pageTitle}</title>
-      </Head>
-
-      <div>
-        <a href="/">Home</a>
-        <h1>{pageTitle}</h1>
-        {items.map((item, idx) => (
-          <div key={idx}>
-            <h2>{item.title}</h2>
-            <img src={item.image} alt="" />
-            <div dangerouslySetInnerHTML={{ __html: item.content }} />
-          </div>
-        ))}
-      </div>
-    </>
-  )
+  return <PageTemplate title="Contentful Sandwiches" items={items || []} logo="contentful" />
 }
 
 const md = new MarkdownIt()

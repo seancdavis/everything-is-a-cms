@@ -1,4 +1,4 @@
-import parseMarkdownFiles from "../../lib/parse-markdown-files"
+import parseMarkdownFiles from "../../lib/reader"
 
 import PageTemplate from "../../templates/page"
 

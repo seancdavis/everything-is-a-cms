@@ -1,30 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Everything is a CMS!
+
+This code supports the demo from the _Everything is a CMS!_ talk from [Next.js Conf 2020](https://nextjs.org/conf/speakers/seancdavis).
+
+Its purpose is to demonstrate that we can easily swap data sources in and out by building abstracted and normalized engines. There are two types of engines, both which are shown within this project:
+
+- API-Based
+- File-Based
+
+Currently, the supported data sources are:
+
+- [Contentful](https://www.contentful.com/)
+- [Trello](https://trello.com/)
 
 ## Getting Started
 
-First, run the development server:
+_Note: This project is built to run in development mode for demo purposes. I haven't tested the build and deploy processes._
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+To run the project, start the Next server:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    $ npm run dev
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+And then visit your browser at [localhost:3000](http://localhost:3000/).
 
-## Learn More
+See below for working with the various data engines and their drivers (i.e. sources).
 
-To learn more about Next.js, take a look at the following resources:
+### ⚠️ Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+There are a series of environment variables that are required to work with various data sources:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+| Data Source | Required Environment Variables                                                     |
+| ----------- | ---------------------------------------------------------------------------------- |
+| Contentful  | `CONTENTFUL_ACCESS_TOKEN`<br>`CONTENTFUL_SPACE_ID`<br>`CONTENTFUL_CONTENT_TYPE_ID` |
+| Trello      | `TRELLO_API_KEY`<br>`TRELLO_ACCESS_TOKEN`                                          |
 
-## Deploy on Vercel
+## API-Based Engine
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The API-based engine example here is an [Apollo GraphQL server](https://www.apollographql.com/). Its contents live in the `api-engine` directory.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+All drivers for this engine live in the `api-engine/lib/drivers` directory and are plugged into the `api-engine/index.js` entry file.
+
+The server must be running to see it in action on the front-end. You can start the server by running:
+
+    $ node api-engine/index.js
+
+You can then work with any of the API-based examples. You can also visit a playground for your GraphQL queries at [localhost:4000](http://localhost:4000/).
+
+## File-Based Engine
+
+The file-based engine has a reader and a writer. The reader is used by the front-end templates to read local markdown files. The writer pulls data from the data sources and writes them to markdown files in the `_data` directory.
+
+You can import files by running the appropriate command-line script:
+
+    $ npm run import:[driver]
+
+Supported drivers are (i.e. replace `[driver]` with one of the following):
+
+- `contentful`
+- `trello`
+
+## Questions and Feedback
+
+If you have question regarding the implementation here or want to talk about the approach, the quickest way to get ahold of me is on Twitter: [@seancdavis29](https://twitter.com/seancdavis29).

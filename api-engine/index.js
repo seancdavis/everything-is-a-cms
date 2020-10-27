@@ -1,5 +1,6 @@
 const { ApolloServer, gql } = require("apollo-server")
 
+const bear = require("./lib/drivers/bear")
 const contentful = require("./lib/drivers/contentful")
 const trello = require("./lib/drivers/trello")
 
@@ -15,6 +16,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    bear: [Sandwich]
     contentful: [Sandwich]
     trello: [Sandwich]
   }
@@ -24,6 +26,7 @@ const typeDefs = gql`
 // schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
   Query: {
+    bear: bear,
     contentful: contentful,
     trello: trello
   }

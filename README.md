@@ -9,6 +9,7 @@ Its purpose is to demonstrate that we can easily swap data sources in and out by
 
 Currently, the supported data sources are:
 
+- [Bear](https://bear.app/)
 - [Contentful](https://www.contentful.com/)
 - [Trello](https://trello.com/)
 
@@ -30,6 +31,7 @@ There are a series of environment variables that are required to work with vario
 
 | Data Source | Required Environment Variables                                                     |
 | ----------- | ---------------------------------------------------------------------------------- |
+| Bear        | `BEAR_DATABASE_PATH`<br>`BEAR_DATABASE_USER`<br>`BEAR_TAG`                         |
 | Contentful  | `CONTENTFUL_ACCESS_TOKEN`<br>`CONTENTFUL_SPACE_ID`<br>`CONTENTFUL_CONTENT_TYPE_ID` |
 | Trello      | `TRELLO_API_KEY`<br>`TRELLO_ACCESS_TOKEN`                                          |
 
@@ -55,6 +57,7 @@ You can import files by running the appropriate command-line script:
 
 Supported drivers are (i.e. replace `[driver]` with one of the following):
 
+- `bear`
 - `contentful`
 - `trello`
 

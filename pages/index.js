@@ -3,10 +3,10 @@ const sections = [
     title: "API-Based",
     slug: "api-based",
     pages: [
-      // {
-      //   slug: "bear",
-      //   title: "Bear"
-      // },
+      {
+        slug: "bear",
+        title: "Bear"
+      },
       {
         slug: "contentful",
         title: "Contentful"

@@ -4,7 +4,7 @@ const { Op } = require("sequelize")
 const slugify = require("slugify")
 const trimStart = require("lodash/trimStart")
 
-const writeMarkdownFiles = require("../writer")
+const extractExcerpt = require("../extract-excerpt")
 
 const seq = new Sequelize("database", process.env.BEAR_DATABASE_USER, null, {
   dialect: "sqlite",
@@ -77,7 +77,7 @@ const parseNote = (note) => {
   let item = matter(note.body)
   item.content = trimStart(item.content)
 
-  return { ...item.data, body: item.content }
+  return { ...item.data, excerpt: extractExcerpt(item.content) }
 }
 
 /**
@@ -87,36 +87,41 @@ const parseNote = (note) => {
  */
 const convertDate = (date) => new Date((date + 946684800) * 1000)
 
-// Find the appropriate tag.
-Tag.findAll({
-  limit: 1,
-  where: {
-    title: process.env.BEAR_TAG
-  },
-  attributes: ["id", "title"]
-}).then((tagData) => {
-  const tagId = tagData[0].dataValues.id
+module.exports = async function getCards() {
+  let items = [],
+    tagId,
+    noteIds = []
 
-  NoteTagJoin.findAll({
+  await Tag.findAll({
+    limit: 1,
+    where: {
+      title: process.env.BEAR_TAG
+    },
+    attributes: ["id", "title"]
+  }).then((tagData) => {
+    tagId = tagData[0].dataValues.id
+  })
+
+  await NoteTagJoin.findAll({
     attributes: ["tagId", "noteId"],
     where: {
       tagId: tagId
     }
   }).then((joinData) => {
-    const noteIds = joinData.map(({ dataValues: { noteId } }) => ({ id: noteId }))
+    noteIds = joinData.map(({ dataValues: { noteId } }) => ({ id: noteId }))
+  })
 
-    Note.findAll({
-      attributes: ["title", "body", "updatedAt"],
-      where: {
-        [Op.or]: noteIds
-      }
-    }).then((data) => {
-      const items = data.map((node) => {
-        const extractedData = extractNoteData(node)
-        return parseNote(extractedData)
-      })
-
-      return writeMarkdownFiles("bear", items)
+  await Note.findAll({
+    attributes: ["title", "body", "updatedAt"],
+    where: {
+      [Op.or]: noteIds
+    }
+  }).then((data) => {
+    items = data.map((node) => {
+      const extractedData = extractNoteData(node)
+      return parseNote(extractedData)
     })
   })
-})
+
+  return items
+}

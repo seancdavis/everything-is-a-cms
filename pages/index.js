@@ -15,10 +15,10 @@ const sections = [
         slug: "dropbox",
         title: "Dropbox"
       },
-      // {
-      //   slug: "fauna",
-      //   title: "FaunaDB"
-      // },
+      {
+        slug: "fauna",
+        title: "FaunaDB"
+      },
       // {
       //   slug: "sheets",
       //   title: "Google Sheets"
@@ -45,10 +45,10 @@ const sections = [
         slug: "dropbox",
         title: "Dropbox"
       },
-      // {
-      //   slug: "fauna",
-      //   title: "FaunaDB"
-      // },
+      {
+        slug: "fauna",
+        title: "FaunaDB"
+      },
       // {
       //   slug: "sheets",
       //   title: "Google Sheets"

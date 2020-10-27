@@ -12,6 +12,7 @@ Currently, the supported data sources are:
 - [Bear](https://bear.app/)
 - [Contentful](https://www.contentful.com/)
 - [Dropbox](https://www.dropbox.com/)
+- [Fauna](https://fauna.com/)
 - [Trello](https://trello.com/)
 
 ## Getting Started
@@ -35,6 +36,7 @@ There are a series of environment variables that are required to work with vario
 | Bear        | `BEAR_DATABASE_PATH`<br>`BEAR_DATABASE_USER`<br>`BEAR_TAG`                         |
 | Contentful  | `CONTENTFUL_ACCESS_TOKEN`<br>`CONTENTFUL_SPACE_ID`<br>`CONTENTFUL_CONTENT_TYPE_ID` |
 | Dropbox     | `DROPBOX_ACCESS_TOKEN`<br>`DROPBOX_FILES_DIR`                                      |
+| Fauna       | `FAUNA_API_KEY`                                                                    |
 | Trello      | `TRELLO_API_KEY`<br>`TRELLO_ACCESS_TOKEN`                                          |
 
 ## API-Based Engine
@@ -62,6 +64,7 @@ Supported drivers are (i.e. replace `[driver]` with one of the following):
 - `bear`
 - `contentful`
 - `dropbox`
+- `fauna`
 - `trello`
 
 ## Questions and Feedback

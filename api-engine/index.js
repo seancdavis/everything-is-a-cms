@@ -1,5 +1,6 @@
 const { ApolloServer, gql } = require("apollo-server")
 
+const contentful = require("./lib/drivers/contentful")
 const trello = require("./lib/drivers/trello")
 
 // A schema is a collection of type definitions (hence "typeDefs")
@@ -14,6 +15,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    contentful: [Sandwich]
     trello: [Sandwich]
   }
 `
@@ -22,6 +24,7 @@ const typeDefs = gql`
 // schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
   Query: {
+    contentful: contentful,
     trello: trello
   }
 }

@@ -5,7 +5,7 @@ import LoadingTemplate from "../../../templates/loading"
 
 const SANDWICHES_QUERY = gql`
   query {
-    sandwiches: trello {
+    sandwiches: contentful {
       title
       image
       body
@@ -14,17 +14,17 @@ const SANDWICHES_QUERY = gql`
   }
 `
 
-const TrelloSandwiches = ({}) => {
-  const pageTitle = "Trello Sandwiches"
+const ContentfulSandwiches = ({}) => {
+  const pageTitle = "Contentful Sandwiches"
   const { loading, error, data } = useQuery(SANDWICHES_QUERY)
 
   const items = data ? data.sandwiches : []
 
   if (error) console.error(error)
 
-  if (loading || error) return <LoadingTemplate title={pageTitle} logo="trello" />
+  if (loading || error) return <LoadingTemplate title={pageTitle} logo="Contentful" />
 
-  return <PageTemplate title={pageTitle} items={items || []} logo="trello" />
+  return <PageTemplate title={pageTitle} items={items || []} logo="Contentful" />
 }
 
-export default TrelloSandwiches
+export default ContentfulSandwiches

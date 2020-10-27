@@ -1,35 +1,73 @@
-const pages = [
-  // {
-  //   slug: "bear",
-  //   title: "Bear"
-  // },
-  // {
-  //   slug: "contentful",
-  //   title: "Contentful"
-  // },
-  // {
-  //   slug: "dropbox",
-  //   title: "Dropbox"
-  // },
-  // {
-  //   slug: "fauna",
-  //   title: "FaunaDB"
-  // },
-  // {
-  //   slug: "sheets",
-  //   title: "Google Sheets"
-  // },
-  // {
-  //   slug: "markdown",
-  //   title: "Markdown Files"
-  // },
+const sections = [
   {
-    slug: "trello",
-    title: "Trello"
+    title: "API-Based",
+    slug: "api-based",
+    pages: [
+      // {
+      //   slug: "bear",
+      //   title: "Bear"
+      // },
+      {
+        slug: "contentful",
+        title: "Contentful"
+      },
+      // {
+      //   slug: "dropbox",
+      //   title: "Dropbox"
+      // },
+      // {
+      //   slug: "fauna",
+      //   title: "FaunaDB"
+      // },
+      // {
+      //   slug: "sheets",
+      //   title: "Google Sheets"
+      // },
+      // {
+      //   slug: "markdown",
+      //   title: "Markdown Files"
+      // },
+      {
+        slug: "trello",
+        title: "Trello"
+      }
+    ]
+  },
+  {
+    title: "File-Based",
+    slug: "file-based",
+    pages: [
+      // {
+      //   slug: "bear",
+      //   title: "Bear"
+      // },
+      {
+        slug: "contentful",
+        title: "Contentful"
+      },
+      // {
+      //   slug: "dropbox",
+      //   title: "Dropbox"
+      // },
+      // {
+      //   slug: "fauna",
+      //   title: "FaunaDB"
+      // },
+      // {
+      //   slug: "sheets",
+      //   title: "Google Sheets"
+      // },
+      // {
+      //   slug: "markdown",
+      //   title: "Markdown Files"
+      // },
+      {
+        slug: "trello",
+        title: "Trello"
+      }
+    ]
   }
 ]
-
-const prefixes = ["API-Based", "File-Based"]
 
 const HomePageCard = ({ logo, title, url }) => {
   return (
@@ -47,15 +85,15 @@ export default function HomePage() {
         <h1 className="text-3xl italic font-bold text-gray-500">Everything is a CMS!</h1>
       </div>
       <div>
-        {prefixes.map((prefix, idx) => (
+        {sections.map((section, idx) => (
           <div key={idx} className="container mx-auto mb-16">
-            <h2 className="text-xl font-bold text-gray-500 text-center mb-4">{prefix}</h2>
+            <h2 className="text-xl font-bold text-gray-500 text-center mb-4">{section.title}</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 px-4 sm:px-0">
-              {pages.map(({ title, slug }, idx) => (
+              {section.pages.map(({ title, slug }, idx) => (
                 <HomePageCard
                   key={idx}
                   title={title}
-                  url={`/${prefix.toLowerCase()}/${slug}`}
+                  url={`/${section.slug}/${slug}`}
                   logo={`/logos/${slug}.svg`}
                 />
               ))}

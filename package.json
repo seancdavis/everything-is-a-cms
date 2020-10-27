@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "import:bear": "node lib/api/bear.js",
+    "import:bear": "node lib/import/bear.js",
     "import:contentful": "node lib/import/contentful.js",
     "import:trello": "node lib/import/trello.js",
     "start": "next start"

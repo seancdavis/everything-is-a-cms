@@ -37,10 +37,10 @@ const sections = [
     title: "File-Based",
     slug: "file-based",
     pages: [
-      // {
-      //   slug: "bear",
-      //   title: "Bear"
-      // },
+      {
+        slug: "bear",
+        title: "Bear"
+      },
       {
         slug: "contentful",
         title: "Contentful"

@@ -33,9 +33,9 @@ export async function getStaticProps() {
   let items = []
   let files = []
 
-  const dbx = new Dropbox({ accessToken: process.env.NEXT_PUBLIC_DROPBOX_ACCESS_TOKEN })
+  const dbx = new Dropbox({ accessToken: process.env.DROPBOX_ACCESS_TOKEN })
 
-  await dbx.filesListFolder({ path: "/everything-is-a-cms" }).then((response) => {
+  await dbx.filesListFolder({ path: process.env.DROPBOX_FILES_DIR }).then((response) => {
     if (!response.result || !response.result.entries) {
       return
     }

@@ -9,6 +9,7 @@
     "export": "next export",
     "import:bear": "node lib/import/bear.js",
     "import:contentful": "node lib/import/contentful.js",
+    "import:dropbox": "node lib/import/dropbox.js",
     "import:trello": "node lib/import/trello.js",
     "start": "next start"
   },

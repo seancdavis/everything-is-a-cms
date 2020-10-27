@@ -11,10 +11,10 @@ const sections = [
         slug: "contentful",
         title: "Contentful"
       },
-      // {
-      //   slug: "dropbox",
-      //   title: "Dropbox"
-      // },
+      {
+        slug: "dropbox",
+        title: "Dropbox"
+      },
       // {
       //   slug: "fauna",
       //   title: "FaunaDB"
@@ -22,10 +22,6 @@ const sections = [
       // {
       //   slug: "sheets",
       //   title: "Google Sheets"
-      // },
-      // {
-      //   slug: "markdown",
-      //   title: "Markdown Files"
       // },
       {
         slug: "trello",
@@ -45,10 +41,10 @@ const sections = [
         slug: "contentful",
         title: "Contentful"
       },
-      // {
-      //   slug: "dropbox",
-      //   title: "Dropbox"
-      // },
+      {
+        slug: "dropbox",
+        title: "Dropbox"
+      },
       // {
       //   slug: "fauna",
       //   title: "FaunaDB"
@@ -56,10 +52,6 @@ const sections = [
       // {
       //   slug: "sheets",
       //   title: "Google Sheets"
-      // },
-      // {
-      //   slug: "markdown",
-      //   title: "Markdown Files"
       // },
       {
         slug: "trello",

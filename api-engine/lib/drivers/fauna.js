@@ -9,7 +9,12 @@ module.exports = async function getCards() {
   let items = []
 
   await client
-    .query(q.Map(q.Paginate(q.Match(q.Index("all_items"))), q.Lambda("X", q.Get(q.Var("X")))))
+    .query(
+      q.Map(
+        q.Paginate(q.Match(q.Index(process.env.FAUNA_INDEX_NAME))),
+        q.Lambda("X", q.Get(q.Var("X")))
+      )
+    )
     .then((res) => {
       items = res.data.map(({ data }) => ({ ...data, excerpt: extractExcerpt(data.content) }))
     })

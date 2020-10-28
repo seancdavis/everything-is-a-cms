@@ -4,6 +4,7 @@ const bear = require("./lib/drivers/bear")
 const contentful = require("./lib/drivers/contentful")
 const dropbox = require("./lib/drivers/dropbox")
 const fauna = require("./lib/drivers/fauna")
+const sheets = require("./lib/drivers/sheets")
 const trello = require("./lib/drivers/trello")
 
 // A schema is a collection of type definitions (hence "typeDefs")
@@ -22,6 +23,7 @@ const typeDefs = gql`
     contentful: [Sandwich]
     dropbox: [Sandwich]
     fauna: [Sandwich]
+    sheets: [Sandwich]
     trello: [Sandwich]
   }
 `
@@ -34,6 +36,7 @@ const resolvers = {
     contentful: contentful,
     dropbox: dropbox,
     fauna: fauna,
+    sheets: sheets,
     trello: trello
   }
 }

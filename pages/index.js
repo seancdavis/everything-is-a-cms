@@ -19,10 +19,10 @@ const sections = [
         slug: "fauna",
         title: "FaunaDB"
       },
-      // {
-      //   slug: "sheets",
-      //   title: "Google Sheets"
-      // },
+      {
+        slug: "sheets",
+        title: "Google Sheets"
+      },
       {
         slug: "trello",
         title: "Trello"
@@ -49,10 +49,10 @@ const sections = [
         slug: "fauna",
         title: "FaunaDB"
       },
-      // {
-      //   slug: "sheets",
-      //   title: "Google Sheets"
-      // },
+      {
+        slug: "sheets",
+        title: "Google Sheets"
+      },
       {
         slug: "trello",
         title: "Trello"

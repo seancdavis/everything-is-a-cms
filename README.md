@@ -31,13 +31,14 @@ See below for working with the various data engines and their drivers (i.e. sour
 
 There are a series of environment variables that are required to work with various data sources:
 
-| Data Source | Required Environment Variables                                                     |
-| ----------- | ---------------------------------------------------------------------------------- |
-| Bear        | `BEAR_DATABASE_PATH`<br>`BEAR_DATABASE_USER`<br>`BEAR_TAG`                         |
-| Contentful  | `CONTENTFUL_ACCESS_TOKEN`<br>`CONTENTFUL_SPACE_ID`<br>`CONTENTFUL_CONTENT_TYPE_ID` |
-| Dropbox     | `DROPBOX_ACCESS_TOKEN`<br>`DROPBOX_FILES_DIR`                                      |
-| Fauna       | `FAUNA_API_KEY`                                                                    |
-| Trello      | `TRELLO_API_KEY`<br>`TRELLO_ACCESS_TOKEN`                                          |
+| Data Source   | Required Environment Variables                                                     |
+| ------------- | ---------------------------------------------------------------------------------- |
+| Bear          | `BEAR_DATABASE_PATH`<br>`BEAR_DATABASE_USER`<br>`BEAR_TAG`                         |
+| Contentful    | `CONTENTFUL_ACCESS_TOKEN`<br>`CONTENTFUL_SPACE_ID`<br>`CONTENTFUL_CONTENT_TYPE_ID` |
+| Dropbox       | `DROPBOX_ACCESS_TOKEN`<br>`DROPBOX_FILES_DIR`                                      |
+| Fauna         | `FAUNA_API_KEY`                                                                    |
+| Google Sheets | `GOOGLE_SHEET_ID`<br>`GOOGLE_CREDENTIALS`                                          |
+| Trello        | `TRELLO_API_KEY`<br>`TRELLO_ACCESS_TOKEN`                                          |
 
 ## API-Based Engine
 
@@ -65,6 +66,7 @@ Supported drivers are (i.e. replace `[driver]` with one of the following):
 - `contentful`
 - `dropbox`
 - `fauna`
+- `sheets`
 - `trello`
 
 ## Questions and Feedback

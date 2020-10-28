@@ -13,6 +13,7 @@ Currently, the supported data sources are:
 - [Contentful](https://www.contentful.com/)
 - [Dropbox](https://www.dropbox.com/)
 - [Fauna](https://fauna.com/)
+- [Google Sheets](https://www.google.com/sheets/about/)
 - [Trello](https://trello.com/)
 
 ## Getting Started
@@ -31,14 +32,101 @@ See below for working with the various data engines and their drivers (i.e. sour
 
 There are a series of environment variables that are required to work with various data sources:
 
-| Data Source   | Required Environment Variables                                                     |
-| ------------- | ---------------------------------------------------------------------------------- |
-| Bear          | `BEAR_DATABASE_PATH`<br>`BEAR_DATABASE_USER`<br>`BEAR_TAG`                         |
-| Contentful    | `CONTENTFUL_ACCESS_TOKEN`<br>`CONTENTFUL_SPACE_ID`<br>`CONTENTFUL_CONTENT_TYPE_ID` |
-| Dropbox       | `DROPBOX_ACCESS_TOKEN`<br>`DROPBOX_FILES_DIR`                                      |
-| Fauna         | `FAUNA_API_KEY`                                                                    |
-| Google Sheets | `GOOGLE_SHEET_ID`<br>`GOOGLE_CREDENTIALS`                                          |
-| Trello        | `TRELLO_API_KEY`<br>`TRELLO_ACCESS_TOKEN`                                          |
+<table>
+  <thead>
+    <tr>
+      <th>Data Source</th>
+      <th>Required Environment Variables</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">Bear</td>
+      <td>
+        <code>BEAR_DATABASE_PATH</code>
+      </td>
+      <td>Local <b>absolute path</b> to Bear's SQLite database.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>BEAR_TAG</code>
+      </td>
+      <td>Notes are filtered by tag. This is the name of the tag without the <code>#</code>.</td>
+    </tr>
+    <tr>
+      <td rowspan="3">Contentful</td>
+      <td>
+        <code>CONTENTFUL_ACCESS_TOKEN</code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <code>CONTENTFUL_CONTENT_TYPE_ID</code>
+      </td>
+      <td>This is a word you control when creating the content type. Usually, if the type is called <code>Sandwich</code>, the ID will be <code>sandwich</code>. </td>
+    </tr>
+    <tr>
+      <td>
+        <code>CONTENTFUL_SPACE_ID</code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">Dropbox</td>
+      <td>
+        <code>DROPBOX_ACCESS_TOKEN</code>
+      </td>
+      <td><a href="https://www.dropbox.com/developers/apps">Create an app</a> to generate a token.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>DROPBOX_FILES_DIR</code>
+      </td>
+      <td>Sandwich files are filtered by directory. The path to the directory in which your files are stored should begin with a slash (e.g. <code>/everything-is-a-cms</code>.</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Fauna</td>
+      <td>
+        <code>FAUNA_API_KEY</code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <code>FAUNA_INDEX_NAME</code>
+      </td>
+      <td>The items are pulled from an index you create with Fauna. This is the name of that index.</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Google Sheets</td>
+      <td>
+        <code>GOOGLE_CREDENTIALS</code>
+      </td>
+      <td>Create a service account and then a JSON key. Download the key and store it as an env var, escaping quotes and other characters as necessary.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>GOOGLE_SHEET_ID</code>
+      </td>
+      <td>You can pull this from the URL when viewing the sheet.</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Trello</td>
+      <td>
+        <code>TRELLO_ACCESS_TOKEN</code>
+      </td>
+      <td>You can find your API key and generate a token for your user <a href="https://trello.com/app-key">here</a>.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>TRELLO_API_KEY</code>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 ## API-Based Engine
 
